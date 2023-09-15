@@ -4,3 +4,14 @@ services:
   api:
     build: ./api
     restart: on-failure
+    env_file:
+      - .env
+
+  aria2:
+    image: p3terx/aria2-pro
+    ports:
+      - "6888:6888"
+      - "6888:6888/udp"
+    restart: on-failure
+    env_file:
+      - .env
