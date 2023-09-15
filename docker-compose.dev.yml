@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  api:
+    build: 
+      context: ./api
+      dockerfile: Dockerfile.dev
+    ports:
+      - "7890:7890"
+    restart: on-failure
+    volumes:
+      - ./api:/app

@@ -1,0 +1,6 @@
+FROM golang:1.20-alpine
+RUN go install github.com/mitranim/gow@latest
+WORKDIR /app
+
+EXPOSE 7890
+CMD gow -r=false run .
