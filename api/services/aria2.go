@@ -29,8 +29,15 @@ func NewAria2() (*Aria2, error) {
 	return p, nil
 }
 
-func (x *Aria2) AddItem(item string) {
-	x.client.AddURI([]string{item}, nil)
+func (x *Aria2) AddItem(uri string) (*models.Item, error) {
+	id, err := x.client.AddURI([]string{uri}, nil)
+	if err != nil {
+		return nil, err
+	}
+	item := new(models.Item)
+	item.Id = id.GID
+	// TODO: Download other datas
+	return item, nil
 }
 
 func (x *Aria2) List() []models.Item {
