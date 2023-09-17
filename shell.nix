@@ -4,5 +4,7 @@ pkgs.mkShell {
     go
     wgo
     aria
+    go-migrate
+    pgformatter
   ];
 }
