@@ -8,7 +8,7 @@ services:
       - .env
 
   aria2:
-    image: p3terx/aria2-pro
+    build: ./aria2
     restart: on-failure
     env_file:
       - .env

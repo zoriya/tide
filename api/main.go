@@ -35,10 +35,14 @@ func main() {
 				http.Error(w, "Bad request", http.StatusBadRequest)
 				return
 			}
+			if newItem.Uri == "" {
+				http.Error(w, "Uri is a required field", http.StatusBadRequest)
+				return
+			}
 
 			item, err := controller.NewItem(newItem)
 			if err != nil {
-				http.Error(w, "Internal Server Error", http.StatusInternalServerError)
+				http.Error(w, err.Error(), http.StatusBadRequest)
 				return
 			}
 			json.NewEncoder(w).Encode(item)

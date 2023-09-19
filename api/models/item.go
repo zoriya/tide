@@ -5,6 +5,7 @@ import "time"
 type State string
 
 const (
+	Unknown     State = "unknown"
 	Stale       State = "stale"
 	Downloading State = "downloading"
 	Seeding     State = "seeding"
@@ -41,6 +42,7 @@ type Item struct {
 	State         State  `json:"state"`
 	Size          uint64 `json:"size"`
 	AvailableSize uint64 `json:"availableSize"`
+	Percent       uint   `json:"percent"`
 	UploadedSize  uint64 `json:"uploadedSize"`
 	// Hexadecimal representation of the download progress.
 	// The highest bit corresponds to the piece at index 0. Any set bits indicate loaded pieces,

@@ -14,11 +14,14 @@ services:
       - .env
 
   aria2:
-    image: p3terx/aria2-pro
+    build: ./aria2
     ports:
       - "6888:6888"
       - "6888:6888/udp"
     restart: on-failure
+    volumes:
+      - $DOWNLOAD_DIR:/downloads
+      - $ARIA2_DIR:/aria2
     env_file:
       - .env
 
