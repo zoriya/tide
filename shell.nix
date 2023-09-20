@@ -3,7 +3,6 @@ pkgs.mkShell {
   packages = with pkgs; [
     go
     wgo
-    aria
     go-migrate
     pgformatter
   ];

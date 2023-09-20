@@ -20,11 +20,11 @@ func main() {
 		log.Fatal("Could not migrate database: ", err)
 	}
 
-	aria2, err := services.NewAria2()
+	qbittorent, err := services.NewQbittorent()
 	if err != nil {
 		log.Fatal("Could not connect to aria2", err)
 	}
-	controller := controllers.NewController(db, aria2)
+	controller := controllers.NewController(db, qbittorent)
 
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		switch r.Method {

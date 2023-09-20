@@ -13,15 +13,18 @@ services:
     env_file:
       - .env
 
-  aria2:
-    build: ./aria2
+  qbittorent:
+    image: qbittorrentofficial/qbittorrent-nox
     ports:
-      - "6888:6888"
-      - "6888:6888/udp"
+      - "6881:6881/tcp"
+      - "6881:6881/udp"
     restart: on-failure
     volumes:
       - $DOWNLOAD_DIR:/downloads
-      - $ARIA2_DIR:/aria2
+    environment:
+      - QBT_EULA=accept
+      - QBT_WEBUI_PORT=8080
+      - QBT_DOWNLOADS_PATH=/downloads
     env_file:
       - .env
 
