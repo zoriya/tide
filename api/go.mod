@@ -1,4 +1,4 @@
-module tide/api
+module github.com/zoriya/tide/api
 
 go 1.20
 

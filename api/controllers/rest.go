@@ -1,8 +1,8 @@
 package controllers
 
 import (
-	models "tide/api/models"
-	services "tide/api/services"
+	models "github.com/zoriya/tide/api/models"
+	services "github.com/zoriya/tide/api/services"
 )
 
 type Controller struct {

@@ -5,9 +5,9 @@ import (
 	"log"
 	"net/http"
 
-	controllers "tide/api/controllers"
-	models "tide/api/models"
-	services "tide/api/services"
+	controllers "github.com/zoriya/tide/api/controllers"
+	models "github.com/zoriya/tide/api/models"
+	services "github.com/zoriya/tide/api/services"
 )
 
 func main() {
